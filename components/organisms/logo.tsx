@@ -3,10 +3,10 @@ import React from 'react'
 
 function Logo() {
   return (
-    <div  className=' flex flex-col bg-cyan-50 hover:text-gray-400 p-5 rounded-md cursor-pointer'>
+    <div  className=' flex flex-col  bg-neutral-600 hover:text-gray-400 p-5 rounded-md cursor-pointer'>
       <Link href="/">
-      <span>Ze</span>
-      <h1>DRINKO</h1>
+      <span className='text-red-500 hover:text-gray-400'>Ze</span>
+      <h1 className='text-red-500 hover:text-gray-400'>DRINKO</h1>
       </Link>
     </div>
   )

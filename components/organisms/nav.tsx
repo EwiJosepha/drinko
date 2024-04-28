@@ -54,10 +54,9 @@ const Navbar: React.FC = () => {
     //     }
 
     //     console.log(res);
-    // };
-
+    // };a
     return (
-        <nav className="bg-black py-5">
+        <nav className="py-5 bg-neutral-800">
             <div className="container mx-auto px-4">
                 <div className="flex justify-between items-center h-16 py-5">
                     {/* Logo */}
@@ -78,12 +77,12 @@ const Navbar: React.FC = () => {
                     {/* Desktop Menu */}
                     <div className="hidden md:flex items-center space-x-20">
                         <div className="relative">
-                            <Link href="/about-me" className="text-white hover:text-gray-400">
+                            <Link href="/about-me" className="text-red-500 hover:text-gray-400">
                               About
                             </Link>
                         </div>
                         <div className="relative">
-                            <Link href="/property" className="text-white hover:text-gray-400">
+                            <Link href="/property" className="text-red-500 hover:text-gray-400">
                                 Drinks
                             </Link>
                         </div>
@@ -91,7 +90,7 @@ const Navbar: React.FC = () => {
                             <div className="relative">
                                 <Link
                                     href="/dashboard"
-                                    className="text-white hover:text-gray-400"
+                                    className="text-red-500 hover:text-gray-400"
                                 >
                                     Dashboard
                                 </Link>
@@ -99,7 +98,7 @@ const Navbar: React.FC = () => {
                         )}
                         {!isAgentSign && (
                             <div className="relative group">
-                                <button className="text-white hover:text-gray-400">
+                                <button className="text-red-500 hover:text-gray-400">
                                     Contact Us
                                 </button>
                             </div>
@@ -112,14 +111,14 @@ const Navbar: React.FC = () => {
                                     
                                 >
                                     <FaLockOpen className="block mr-3 text-xl" />
-                                    <span className="hidden md:inline">LogOut</span>
+                                    <span className=" text-red-500 hover:text-gray-400 hidden md:inline">LogOut</span>
                                 </button>
                             </div>
                         )}
 
                         {!isAgentSign && (
                             <Link href="/login">
-                                <span className="relative text-white flex items-center justify-center hover:text-gray-400">
+                                <span className="relative text-red-500 hover:text-gray-400 flex items-center justify-center ">
                                     <FaRegUserCircle className="mr-2 text-2xl" />
                                     <button className=" ">Log In</button>
                                 </span>
