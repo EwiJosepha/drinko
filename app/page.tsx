@@ -3,7 +3,7 @@ import LandingPage from "./landing/page";
 
 export default function Home() {
   return (<>
-    <main className=" p-24">
+    <main>
       <LandingPage />
     </main>
     {/* <section className="p-24">
