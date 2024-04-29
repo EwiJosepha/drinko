@@ -62,7 +62,7 @@ const Navbar: React.FC = () => {
                 type='search'
                 placeholder='search drinks'
                 // onChange={searchRooms2}
-                className='border border-gray-400 px-6 py-2 float-right placeholder-red-500 hover:text-gray-400 bg-neutral-600 pr-8' />
+                className='border border-gray-400 px-6 py-2 float-right placeholder-orange-500 hover:text-gray-400 bg-neutral-600 pr-8' />
 
             <div className="container mx-auto px-4">
                 <div className="flex justify-between items-center h-16 py-5">
