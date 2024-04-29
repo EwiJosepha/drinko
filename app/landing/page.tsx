@@ -1,3 +1,4 @@
+import Footer from '@/components/organisms/footer'
 import HeroSection from '@/components/organisms/heroSec'
 import Navbar from '@/components/organisms/nav'
 import React from 'react'
@@ -7,6 +8,7 @@ function LandingPage() {
     <div>
       <Navbar />
       <HeroSection />
+      <Footer />
     </div>
   )
 }
