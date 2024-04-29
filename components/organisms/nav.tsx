@@ -56,7 +56,7 @@ const Navbar: React.FC = () => {
     //     console.log(res);
     // };a
     return (
-        <nav className="py-5 bg-neutral-800">
+        <nav className="py-5 bg-neutral-800 ">
 
             <input
                 type='search'
