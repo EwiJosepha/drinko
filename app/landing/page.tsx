@@ -4,6 +4,7 @@ import Navbar from '@/components/organisms/nav'
 import FilterByCategories from '@/components/organisms/filters'
 import React from 'react'
 import PopularSection from '@/components/organisms/popular'
+import Cards from '@/components/organisms/card'
 
 function LandingPage() {
   return (
@@ -12,6 +13,7 @@ function LandingPage() {
       <HeroSection />
       <FilterByCategories />
       <PopularSection />
+      <Cards />
       <Footer />
     </div>
   )
