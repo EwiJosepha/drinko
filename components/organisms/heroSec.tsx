@@ -1,5 +1,6 @@
 import Image from "next/image"
 import punch from "@/public/assets/images/bg.avif"
+import pun from "@/public/assets/images/punchpic.jpg"
 const HeroSection: React.FC = () => {
 
   return (

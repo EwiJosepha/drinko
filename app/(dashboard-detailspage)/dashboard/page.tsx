@@ -1,10 +1,19 @@
+import DbLayout from '@/components/db-header'
 import React from 'react'
 
-function Dashboard() {
+const Dashboard: React.FC = () => {
   return (
-    <div>
-      <h1 className='text-white'>Hello there</h1>
-    </div>
+
+    <>
+
+      <DbLayout header="Dashboard" only_header>
+        <div>
+          <h1 className='text-white'>Hello there Hello there Hello thereHello there</h1>
+        </div>
+      </DbLayout>
+
+    </>
+
   )
 }
 
