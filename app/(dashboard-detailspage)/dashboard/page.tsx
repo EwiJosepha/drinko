@@ -1,15 +1,30 @@
 import DbLayout from '@/components/db-header'
 import React from 'react'
+import df from "@/public/assets/images/bg.avif"
 
 const Dashboard: React.FC = () => {
   return (
 
     <>
-
       <DbLayout header="Dashboard" only_header>
-        <div>
-          <h1 className='text-white'>Hello there Hello there Hello thereHello there</h1>
+
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4" style={{ gridAutoRows: "500px" }}>
+          <div className="bg-neutral-800 shadow-lg rounded-lg p-4">
+            <h2 className="text-xl font-bold mb-4">Your Drinks</h2>
+            {/* Content for the drinks section */}
+      
+          </div>
+          <div className="bg-neutral-800 shadow-lg rounded-lg p-4">
+            <h2 className="text-xl font-bold mb-4">Ingredients</h2>
+            {/* Content for the ingredients section */}
+          </div>
+          <div className="bg-neutral-800 shadow-lg rounded-lg p-4">
+            <h2 className="text-xl font-bold mb-4">Categories</h2>
+            {/* Content for the categories section */}
+        
+          </div>
         </div>
+
       </DbLayout>
 
     </>

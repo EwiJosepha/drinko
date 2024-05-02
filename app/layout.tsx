@@ -24,7 +24,11 @@ export default function RootLayout({
           disableTransitionOnChange
         >
 
-          {children}
+<div className="md:w-[80%] w-full z-10 min-h-screen">
+                <>
+                    {children}
+                </>
+            </div>
         </ThemeProvider>
       </body>
     </html>

@@ -8,7 +8,7 @@ export default function DbLayout ({children, only_header, header}: Props) {
 
   return(
     <>
-       <div className="text-orange-500 h-32 bg-blue z-10 justify-between flex items-center md:mx-auto md:w-[80%] right-0 top-0 fixed pl-24">
+       <div className="text-orange-500 h-32 bg-red-800 z-10 justify-between flex items-center md:mx-auto md:w-[80%] right-0 top-0 fixed pl-24">
                 <div className="text-3xl font-mono font-bold">{header}</div>
 
                 {/* Desktop Menu */}
@@ -28,7 +28,7 @@ export default function DbLayout ({children, only_header, header}: Props) {
                 </div>
             </div>
 
-            <div className="bg-neutral-700 w-full md:w-[83%] flex-col md:mt-40 mb-10 rounded-xl flex md:mx-auto ">{children}</div>
+            <div className=" w-full md:w-[83%] flex-col md:mt-40 mb-10 rounded-xl flex  md:mx-auto ">{children}</div>
     </>
   )
 
