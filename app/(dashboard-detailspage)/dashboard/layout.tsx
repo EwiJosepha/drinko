@@ -7,6 +7,7 @@ import {
   FaRegHeart,
   FaRegUser,
 } from "react-icons/fa";
+import Link from "next/link";
 
 type Props = {
   children: ReactNode;
@@ -67,8 +68,8 @@ const DbLayout: React.FC<Props>= ({ children })=> {
             </li>
             {/* <hr /> */}
             <li className=" pb-10 pt-10 border-b-2 border-gray-500">
-              <a
-                href="#"
+              <Link href="/dashboard/profile"
+                
                 className="flex items-center p-2 text-gray-900 rounded-lg dark:text-orange-500 hover:bg-gray-100 dark:hover:bg-gray-700 group"
               >
                 <FaRegUser />
@@ -76,7 +77,7 @@ const DbLayout: React.FC<Props>= ({ children })=> {
                 <span className="inline-flex items-center justify-center px-2 ms-3 text-sm font-medium text-gray-800 bg-gray-100 rounded-full dark:bg-gray-700 dark:text-gray-300">
                   Pro
                 </span>
-              </a>
+              </Link>
             </li>
            
               <li className="pb-10 pt-10 border-b-2 border-gray-500">

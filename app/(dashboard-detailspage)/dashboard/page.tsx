@@ -12,15 +12,27 @@ const Dashboard: React.FC = () => {
           <div className="bg-neutral-800 shadow-lg rounded-lg p-4">
             <h2 className="text-xl font-bold mb-4">Your Drinks</h2>
             {/* Content for the drinks section */}
+            <div className="drinks flex justify-between px-5">
+              <h1 className=' text-1xl hover:text-orange-500 cursor-pointer'>Lemonade</h1>
+              <img src='/assets/images/bg.avif' alt="lemonade"  className=' w-10 h-10 rounded-full cursor-default'/>
+            </div>
       
           </div>
           <div className="bg-neutral-800 shadow-lg rounded-lg p-4">
             <h2 className="text-xl font-bold mb-4">Ingredients</h2>
             {/* Content for the ingredients section */}
+            <div className="drinks flex justify-between px-5">
+              <h1 className=' text-1xl hover:text-orange-500 cursor-pointer'>Lemonade</h1>
+              <img src='/assets/images/bg.avif' alt="lemonade"  className=' w-10 h-10 rounded-full cursor-default'/>
+            </div>
           </div>
           <div className="bg-neutral-800 shadow-lg rounded-lg p-4">
             <h2 className="text-xl font-bold mb-4">Categories</h2>
             {/* Content for the categories section */}
+            <div className="drinks flex justify-between px-5">
+              <h1 className=' text-1xl hover:text-orange-500 cursor-pointer'>Lemonade</h1>
+              <img src='/assets/images/bg.avif' alt="lemonade"  className=' w-10 h-10 rounded-full cursor-default'/>
+            </div>
         
           </div>
         </div>
