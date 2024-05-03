@@ -88,7 +88,7 @@ const EditProfile: React.FC = (): JSX.Element | null => {
   return (
     <div>
       <DbLayout header="Edit Profile">
-        <div className="mx-auto container py-10 px-20 mb-10 bg-neutral-700">
+        <div className="mx-auto container py-10 px-20 mb-10 bg-neutral-700 rounded-lg">
 
           <Image
             src={formData?.imageUrl || '/default-profile-picture.jpg'}

@@ -24,7 +24,7 @@ const ViewProfile: React.FC<{}> = (): JSX.Element | null => {
   return (
     <>
       <DbLayout header="View Profile">
-        <div className="mx-auto py-10 px-20 items-center justify-center flex flex-col bg-neutral-700">
+        <div className="mx-auto py-10 px-20 items-center justify-center flex flex-col bg-neutral-700 rounded-lg">
           <div className="flex justify-center mb-6 w-52 h-52">
 
             {/* use this image because is gotten from the profile update there we have to add the Pictureprofile to the formdata  */}
