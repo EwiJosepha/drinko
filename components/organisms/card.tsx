@@ -17,7 +17,7 @@ function Cards() {
             <button className="text-white font-semibold hover:text-gray-200">view all Details</button>
           </div>
         </div>
-        <div className="bg-brown-500 text-white rounded-lg shadow-lg overflow-hidden transform hover:scale-105 transition duration-300 ">
+        <div className="bg-brown-500 text-white rounded-lg shadow-lg overflow-hidden transform hover:scale-105 transition duration-300">
           <img src="/assets/images/punchpic.jpg" alt="card Img" />
           <div className="p-4">
             <h3 className="text-2xl font-semibold mb-2">Drink Name</h3>
