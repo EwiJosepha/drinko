@@ -1,7 +1,8 @@
 'use client'
 
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import DbLayout from "../db-header";
+import Spinners from "../molecules/spinners";
 
 type Prop = {
   name: string;
@@ -14,8 +15,6 @@ type Prop = {
 }
 
 const DrinkCard: React.FC = () => {
-  const [error, setError] = useState<string>('');
-  const [errorrooms, setErrorrooms] = useState<string>('');
   const [errorname, setErrorname] = useState<string>('');
   const [errordescription, setErrordescription] = useState<string>('');
   const [errorrecipe, setErrorrecipe] = useState<string>('');
@@ -23,8 +22,9 @@ const DrinkCard: React.FC = () => {
   const [errorglass, setErrorglass] = useState<string>('');
   const [errorcategory, setErrorcategory] = useState<string>('');
   const [disable, setDisable] = useState(false)
+  const [loading, setLoading] = useState(false)
 
-  const [propertyInfo, setPropertyInfo] = useState<Prop>({
+  const [drinkInfo, setDrinkInfo] = useState<Prop>({
     name: "",
     description: "",
     recipe: [],
@@ -33,119 +33,64 @@ const DrinkCard: React.FC = () => {
     category: "",
   })
 
-  const [data, setData] = useState<Prop>(propertyInfo)
+  // useEffect(()=>{
+  //   if(data){
+  //     setDrinkInfo({
+  //       ...drinkInfo,
+  //       name: data.name || "",
+  //       description: data.description || "",
+  //       recipe: data.recipe || [],
+  //       ingredients: data.recipe || "",
+  //       glass: data.glass || "",
+  //       category: data.category || ""
+  
+  //     })
+  //   }
+  
+  // },[data])
 
-  const handleSelectChangename = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement| HTMLSelectElement | HTMLTextAreaElement>) => {
     const { value } = e.target;
-    setPropertyInfo((prevPropertyInfo) => ({
-      ...prevPropertyInfo,
+    setDrinkInfo((prevdrinkInfo) => ({
+      ...prevdrinkInfo,
       name: value,
     }));
-
-    // setData((prevPropertyInfo) => ({
-    //   ...prevPropertyInfo,
-    //   bath: value,
-
-    // }));
+    
     setErrorname('')
-  };
-
-  const handleSelectChangedescription = (e: React.ChangeEvent<HTMLSelectElement>) => {
-    const { value } = e.target;
-    setPropertyInfo((prevPropertyInfo) => ({
-      ...prevPropertyInfo,
-      description: value,
-    }));
-
-
-    // setData((prevPropertyInfo) => ({
-    //   ...prevPropertyInfo,
-    //   livingRooms: value,
-    // }));
-
     setErrordescription('')
-  };
-
-  const handleSelectChangeingredients = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
-    const { value } = e.target;
-    setPropertyInfo((prevPropertyInfo) => ({
-      ...prevPropertyInfo,
-      ingredients: value,
-    }));
-
-    setData((prevPropertyInfo) => ({
-      ...prevPropertyInfo,
-      ingredients: value,
-    }));
+    setErrorrecipe('')
     setErroringredients('')
-  };
-  // const handleSelectChangerecipe = (e: React.ChangeEvent<HTMLSelectElement>) => {
-  //   const { value } = e.target;
-  //   setPropertyInfo((prevPropertyInfo) => ({
-  //     ...prevPropertyInfo,
-  //     recipe: value,
-  //   }));
-
-  //   setData((prevPropertyInfo) => ({
-  //     ...prevPropertyInfo,
-  //     recipe: value,
-  //   }));
-  //   setErrorrecipe('')
-  // };
-
-  const handleInputChangecategory = (e: React.ChangeEvent<HTMLSelectElement>) => {
-    const { value } = e.target;
-    setPropertyInfo((prevPropertyInfo) => ({
-      ...prevPropertyInfo,
-      category: value,
-    }));
-
-    // setData((prevPropertyInfo) => ({
-    //   ...prevPropertyInfo,
-    //   category: parseFloat(value),
-    // }));
     setErrorcategory('')
+    setErrorglass('')
+    
   };
 
-  const handleInputChangeglass = (e: React.ChangeEvent<HTMLSelectElement>) => {
-    const { value } = e.target;
-    setPropertyInfo((prevPropertyInfo) => ({
-      ...prevPropertyInfo,
-      glass: value
-    }));
-    // setData((prevPropertyInfo) => ({
-    //   ...prevPropertyInfo,
-    //   glass: value
-    // }));
-
-    setErrorglass('')
-  }
-
-  function save() {
-    if (propertyInfo.name === "") {
+   function save() {
+    if (drinkInfo.name === "") {
       setErrorname('Name is required*')
       return
     }
 
-    if (propertyInfo.description === '') {
+    if (drinkInfo.description === '') {
       setErrordescription('description is requied*')
       return
     }
 
-    if (!propertyInfo.recipe) {
+    if (!drinkInfo.recipe) {
       setErrorrecipe('recipe is required*')
       return
     }
-    if (propertyInfo.glass === "") {
+    if (drinkInfo.glass === "") {
       setErrorglass('Glass is required*')
       return
     }
-    if (propertyInfo.category === "") {
+    if (drinkInfo.category === "") {
       setErrorcategory('Room is required*')
       return
     }
   
     setDisable(true)
+    setLoading(false)
   }
 
   return (
@@ -160,9 +105,11 @@ const DrinkCard: React.FC = () => {
           </label>
           <input
             type="text"
+            name="name"
+            value={drinkInfo.name}
             id="propertySize"
             className="border border-gray-200 px-4 py-3 rounded-md w-full"
-            onChange={handleSelectChangename}
+            onChange={handleInputChange}
             required
           />
           {errorname && <p className="text-red-500 text-sm py-2">{errorname}</p>}
@@ -170,9 +117,12 @@ const DrinkCard: React.FC = () => {
 
         <div className="mb-4 w-[45%]">
           <label htmlFor="bedrooms" className="block">
-            Description*
+            Glass*
           </label>
-          <select className="border border-gray-200 px-4 py-3 rounded-md w-full" onChange={ handleSelectChangedescription}>
+          <select className="border border-gray-200 px-4 py-3 rounded-md w-full"
+          name="glass"
+          value={drinkInfo.glass}
+          onChange={ handleInputChange}>
             <option value="">0</option>
             <option value="1">1</option>
             <option value="2">2</option>
@@ -180,7 +130,7 @@ const DrinkCard: React.FC = () => {
             <option value="4">4</option>
             <option value="5">5</option>
           </select>
-          {errorrooms && <p className="text-red-500 text-sm py-2">{errorrooms}</p>}
+          {errorglass && <p className="text-red-500 text-sm py-2">{errorglass}</p>}
 
         </div>
       </div>
@@ -189,7 +139,10 @@ const DrinkCard: React.FC = () => {
           <label htmlFor="bathrooms" className="block">
             Category*
           </label>
-          <select className="border border-gray-200 px-4 py-3 rounded-md w-full" onChange={handleInputChangecategory}>
+          <select className="border border-gray-200 px-4 py-3 rounded-md w-full"
+          name="category"
+          value={drinkInfo.category}
+           onChange={handleInputChange}>
             <option value="">0</option>
             <option value="1">1</option>
             <option value="2">2</option>
@@ -204,7 +157,7 @@ const DrinkCard: React.FC = () => {
           <label htmlFor="bathrooms" className="block">
             Glass*
           </label>
-          <select className="border border-gray-200 px-4 py-3 rounded-md w-full" onChange={handleInputChangeglass}>
+          <select className="border border-gray-200 px-4 py-3 rounded-md w-full" onChange={handleInputChange}>
             <option value="">0</option>
             <option value="1">1</option>
             <option value="2">2</option>
@@ -222,7 +175,9 @@ const DrinkCard: React.FC = () => {
         </label>
         <textarea
           id="kitchenDescription"
-          onChange={handleSelectChangeingredients}
+          name="ingredients"
+          value={drinkInfo.ingredients}
+          onChange={handleInputChange}
           className="border border-gray-200 px-4 py-3 rounded-md w-full"
           required
         ></textarea>
@@ -237,6 +192,8 @@ const DrinkCard: React.FC = () => {
           type="text"
           id="propertyLocation"
           className="border border-gray-200 px-4 py-3 rounded-md w-full"
+          name="recipe"
+          value={drinkInfo.recipe}
           // onChange={handleInputChangerecipe}
           required
         />
