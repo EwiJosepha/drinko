@@ -15,8 +15,7 @@ interface Props {
     refetch: (...args: any) => Promise<any>;
 }
 
-const DropDownDrinks
-: React.FC = () => {
+const CategoryDropDown: React.FC = () => {
     const router = useRouter()
     const [openModal, setOpenModal] = useState(false);
     // const notify = () => toast.success("Save Property successfully")
@@ -59,7 +58,7 @@ const DropDownDrinks
     return (
         <div>
             <ul className="w-28 shadow-lg p-4 rounded-lg space-y-4 bg-white text-gray-700">
-                <Link href={"/dashboard/edit-drink"}>
+                <Link href={"/dashboard/editproperty"}>
                     <li className="flex item-center gap-2 cursor-pointer mb-5">
                         <FaEdit /> Edit
                     </li>
@@ -89,5 +88,4 @@ const DropDownDrinks
     );
 };
 
-export default DropDownDrinks
-;
+export default CategoryDropDown;
