@@ -9,7 +9,6 @@ const Drinksss: React.FC = () => {
   return (
     <>
       <DbLayout header="Creat A Drink">
-
         <DrinkCard />
       </DbLayout>
     </>

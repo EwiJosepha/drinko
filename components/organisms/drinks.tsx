@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import DbLayout from "@/components/db-header";
+import { base_url } from "@/app/service/util";
 
 type Prop = {
   name: string;
@@ -19,7 +20,7 @@ const CreatDrink: React.FC = () => {
   const [errorcategory, setErrorcategory] = useState<string>("");
   const [disable, setDisable] = useState(false);
 
-  const [propertyInfo, setPropertyInfo] = useState<Prop>({
+  const [drink, setDrink] = useState<Prop>({
     name: "",
     description: "",
     recipe: [],
@@ -34,37 +35,56 @@ const CreatDrink: React.FC = () => {
     >
   ) => {
     const { name, value } = e.target;
-    setPropertyInfo({
-      ...propertyInfo,
+    setDrink({
+      ...drink,
       [name]: value,
     });
   };
 
-  const save = () => {
-    if (propertyInfo.name === "") {
+  const createDrink= () => {
+    if (drink.name === "") {
       setErrorname("Name is required*");
       return;
     }
 
-    if (propertyInfo.description === "") {
+    if (drink.description === "") {
       setErrordescription("Description is required*");
       return;
     }
 
-    if (!propertyInfo.recipe || propertyInfo.recipe.length === 0) {
+    if (!drink.recipe || drink.recipe.length === 0) {
       setErrorrecipe("Recipe is required*");
       return;
     }
 
-    if (propertyInfo.glass === "") {
+    if (drink.glass === "") {
       setErrorglass("Glass is required*");
       return;
     }
 
-    if (propertyInfo.category === "") {
+    if (drink.category === "") {
       setErrorcategory("Category is required*");
       return;
     }
+
+    fetch(base_url + "post/create/categories", {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(drink)
+    }).then((res) => {
+      if (!res.ok) {
+        console.log("didn't get created");
+        throw new Error("Request failed");
+      }
+      return res.json(); 
+    }).then((data) => {
+      console.log("data", data);
+    }).catch((error) => {
+      console.log(error);
+      // Handle any errors that occurred during the request
+    });
 
     setDisable(true);
   };
@@ -181,7 +201,7 @@ const CreatDrink: React.FC = () => {
         <button
           disabled={disable}
           className="text-white w-40 bg-blue px-4 py-2 rounded-md mt-5 mb-3"
-          onClick={save}
+          onClick={createDrink}
         >
           Save
         </button>

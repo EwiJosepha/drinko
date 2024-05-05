@@ -4,7 +4,7 @@ import React from "react";
 import { useState } from "react";
 import { base_url } from "@/app/service/util";
 
-const GlassCard: React.FC = () => {
+const IngredientCard: React.FC = () => {
 
   const [errort, setErrort] = useState("")
   const [errorn, setErrorn] = useState("")
@@ -27,7 +27,7 @@ const GlassCard: React.FC = () => {
     setErrort("")
   }
   function createGlass() {
-    fetch(base_url + "post/create/glass", {
+    fetch(base_url + "post/create/ingredients", {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
@@ -43,22 +43,21 @@ const GlassCard: React.FC = () => {
       console.log("data", data);
     }).catch((error) => {
       console.log(error);
-      // Handle any errors that occurred during the request
     });
   }
 
   return (
     <div className="flex justify-center items-center h-screen bg-neutral-700">
       <div className="bg-neutral-700 rounded-lg p-8 shadow-lg">
-        <h1 className="text-2xl font-bold mb-4">Glass Card</h1>
+        <h1 className="text-2xl font-bold mb-4">Ingredients Card</h1>
         <input
           type="text"
-          placeholder="Enter glass name"
+          placeholder="Enter ingredient name"
           className="w-full bg-gray-200 border border-gray-300 rounded mb-4 p-2"
           onChange={handleInputChange}
         />
         <textarea
-          placeholder="Enter your message"
+          placeholder="Enter description"
           className="w-full bg-gray-200 border border-gray-300 rounded mb-4 p-2"
           rows={4}
           onChange={handleInputChange}
@@ -74,4 +73,4 @@ const GlassCard: React.FC = () => {
   );
 };
 
-export default GlassCard;
+export default IngredientCard;
