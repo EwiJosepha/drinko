@@ -25,29 +25,25 @@ const CategoryCard: React.FC = () => {
     setErrorn("")
     setErrort("")
   }
-
   function createCategory() {
-    
-      fetch("http://localhost:3000/post/create",
-        {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json'
-          },
-          body: JSON.stringify(categoryInfo)
-        }).then((res) => {
-          if (!res.ok) {
-            console.log("disnt get created");
-            return res
-          }
-        }).then((data) => {
-          if (data) {
-            console.log("wrong");
-          }
-          console.log(data);
-
-          return data
-        })
+    fetch(base_url + "post/create/categories", {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(categoryInfo)
+    }).then((res) => {
+      if (!res.ok) {
+        console.log("didn't get created");
+        throw new Error("Request failed");
+      }
+      return res.json(); 
+    }).then((data) => {
+      console.log("data", data);
+    }).catch((error) => {
+      console.log(error);
+      // Handle any errors that occurred during the request
+    });
   }
 
 
