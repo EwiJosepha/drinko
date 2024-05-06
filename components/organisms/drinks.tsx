@@ -105,12 +105,12 @@ const CreatDrink: React.FC = () => {
       setErrorcategory("Category is required*");
       return;
     }
-    if (drink.imageUrl === "") {
-      setErrorm("image Url is required*");
-      return;
-    }
+    // if (drink.imageUrl === "") {
+    //   setErrorm("image Url is required*");
+    //   return;
+    // }
 
-    fetch(base_url + "post/create/categories", {
+    fetch(base_url + "post/create/drinks", {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
