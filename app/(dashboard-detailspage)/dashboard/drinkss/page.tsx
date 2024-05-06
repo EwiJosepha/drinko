@@ -8,9 +8,7 @@ import GlassCard from "@/components/organisms/glass"
 const Drinksss: React.FC = () => {
   return (
     <>
-      <DbLayout header="Creat A Drink">
-        <DrinkCard />
-      </DbLayout>
+      <DrinkCard />
     </>
   )
 

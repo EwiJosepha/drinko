@@ -25,6 +25,7 @@ const CategoryCard: React.FC = () => {
     setErrorn("")
     setErrort("")
   }
+
   function createCategory() {
     fetch(base_url + "post/create/categories", {
       method: 'POST',
@@ -37,16 +38,14 @@ const CategoryCard: React.FC = () => {
         console.log("didn't get created");
         throw new Error("Request failed");
       }
-      return res.json(); 
+      return res.json();
     }).then((data) => {
       console.log("data", data);
     }).catch((error) => {
       console.log(error);
-      // Handle any errors that occurred during the request
+      throw new Error(error)
     });
   }
-
-
 
   return (
     <div className="flex justify-center items-center h-screen bg-neutral-700 pl-96">
