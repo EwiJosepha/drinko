@@ -47,60 +47,37 @@ const CreatDrink: React.FC = () => {
     });
   };
 
-
-  function imagehandle(e: React.ChangeEvent<HTMLInputElement>) {
+  async function imagehandle(e: React.ChangeEvent<HTMLInputElement>) {
     const fileName = e.target.files?.[0];
     if (fileName) {
-      const loadimg = new FileReader();
-      loadimg.onload = () => {
-        const targetImg = loadimg.result as string;
-        setImg(targetImg);
-        // localStorage.setItem("targetimg", targetImg);
-      };
-      loadimg.readAsDataURL(fileName);
-      loadimg.onloadend = () => {
-        setImg(loadimg.result as string)
+      try {
+        const formData = new FormData();
+        formData.append("file", fileName);
+        formData.append("upload_preset", "real-estate-preset");
+  
+        const uploadResponse = await fetch(
+          "https://api.cloudinary.com/v1_1/beri-cloud/image/upload",
+          {
+            method: "POST",
+            body: formData,
+          }
+        );
+  
+        if (!uploadResponse.ok) {
+          throw new Error("Failed to upload image");
+        }
+  
+        const uploadedImageData = await uploadResponse.json();
+        const imageUrl = uploadedImageData.secure_url;
+        
+        // Use the imageUrl as needed (e.g., setImg(imageUrl), store in localStorage, etc.)
+        console.log("Image URL:", imageUrl);
+      } catch (error) {
+        console.error("Error uploading image:", error);
+        // Handle the error, e.g., display an error message to the user
       }
     }
   }
-
-  console.log(img);
-  
-
-  // async function imagehandle(e: React.ChangeEvent<HTMLInputElement>) {
-  //   const fileName = e.target.files?.[0];
-  //   if (fileName) {
-  //     try {
-  //       const formData = new FormData();
-  //       formData.append("file", fileName);
-  //       formData.append("upload_preset", "real-estate-preset");
-  
-  //       const uploadResponse = await fetch(
-  //         "https://api.cloudinary.com/v1_1/beri-cloud/image/upload",
-  //         {
-  //           method: "POST",
-  //           body: formData,
-  //         }
-  //       );
-  
-  //       if (!uploadResponse.ok) {
-  //         throw new Error("Failed to upload image");
-  //       }
-  
-  //       const uploadedImageData = await uploadResponse.json();
-  //       const imageUrl = uploadedImageData.secure_url;
-        
-  //       // Use the imageUrl as needed (e.g., setImg(imageUrl), store in localStorage, etc.)
-  //       console.log("Image URL:", imageUrl);
-  //     } catch (error) {
-  //       console.error("Error uploading image:", error);
-  //       // Handle the error, e.g., display an error message to the user
-  //     }
-  //   }
-  // }
-
-  console.log(drink);
-  
 
 
   const createDrink = () => {
@@ -128,12 +105,12 @@ const CreatDrink: React.FC = () => {
       setErrorcategory("Category is required*");
       return;
     }
-    // if (drink.imageUrl === "") {
-    //   setErrorm("image Url is required*");
-    //   return;
-    // }
+    if (drink.imageUrl === "") {
+      setErrorm("image Url is required*");
+      return;
+    }
 
-    fetch(base_url + "post/create/drinks", {
+    fetch(base_url + "post/create/categories", {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
@@ -150,6 +127,8 @@ const CreatDrink: React.FC = () => {
     }).catch((error) => {
       console.log(error);
     });
+
+    console.log("hey");
     setDisable(true);
   };
 
