@@ -51,6 +51,7 @@ if (isLoading) {
   }
 
   function saveCategory() {
+    
     const updatedValues = {
       method: 'PUT',
       headers: {
