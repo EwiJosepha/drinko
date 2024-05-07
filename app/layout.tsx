@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/components/ui/theme-provider";
+import { ReactQueryProvider } from "./_app";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -24,11 +25,14 @@ export default function RootLayout({
           disableTransitionOnChange
         >
 
-<div className="md:w-[80%] w-full z-10 min-h-screen">
-                <>
-                    {children}
-                </>
-            </div>
+          <div className="md:w-[80%] w-full z-10 min-h-screen">
+            <>
+              <ReactQueryProvider>
+                {children}
+              </ReactQueryProvider>
+
+            </>
+          </div>
         </ThemeProvider>
       </body>
     </html>

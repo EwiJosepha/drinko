@@ -7,7 +7,7 @@ import { base_url } from "@/app/service/util";
 type Prop = {
   name: string;
   description: string;
-  imageUrl: string;
+  // imageUrl: string;
   ingredients: string;
   recipe: string[];
   category: string;
@@ -28,7 +28,7 @@ const CreatDrink: React.FC = () => {
   const [drink, setDrink] = useState<Prop>({
     name: "",
     description: "",
-    imageUrl: img,
+    // imageUrl: "",
     recipe: [],
     ingredients: "",
     glass: "",
@@ -71,7 +71,7 @@ const CreatDrink: React.FC = () => {
         const imageUrl = uploadedImageData.secure_url;
         
         // Use the imageUrl as needed (e.g., setImg(imageUrl), store in localStorage, etc.)
-        console.log("Image URL:", imageUrl);
+        setImg(imageUrl)
       } catch (error) {
         console.error("Error uploading image:", error);
         // Handle the error, e.g., display an error message to the user
@@ -81,6 +81,11 @@ const CreatDrink: React.FC = () => {
 
 
   const createDrink = () => {
+
+    const combineObjc = {
+      ...drink,
+      imageUrl:img
+    }
     if (drink.name === "") {
       setErrorname("Name is required*");
       return;
@@ -115,7 +120,7 @@ const CreatDrink: React.FC = () => {
       headers: {
         'Content-Type': 'application/json'
       },
-      body: JSON.stringify(drink)
+      body: JSON.stringify(combineObjc)
     }).then((res) => {
       if (!res.ok) {
         console.log("didn't get created");
@@ -128,8 +133,9 @@ const CreatDrink: React.FC = () => {
       console.log(error);
     });
 
-    console.log("hey");
     setDisable(true);
+    console.log(combineObjc);
+
   };
 
   
