@@ -12,6 +12,7 @@ if (typeof localStorage !== "undefined") {
   console.log(updglassId);
   
 }
+
 export let updcategoryId: any
 
 if (typeof localStorage !== "undefined") {
@@ -23,7 +24,7 @@ if (typeof localStorage !== "undefined") {
 
 export const updateUrl = base_url + `put/update/glasses/${updglassId}`
 
-export const updateCatUrl =base_url + `get/read/categories/${updcategoryId}`
+export const updateCatUrl =base_url + `put/update/categories/${updcategoryId}`
 
 
 
@@ -42,7 +43,7 @@ export const getOnecategory = () => {
   return useQuery({
     queryKey: ['onecategory'],
     queryFn: async () => {
-      const { data } = await axios.get(base_url + `get/read/categories/${updglassId}`)
+      const { data } = await axios.get(base_url + `get/read/categories/${updcategoryId}`)
       return data.data
     }
     
