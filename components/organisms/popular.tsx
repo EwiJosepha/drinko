@@ -11,7 +11,7 @@ function PopularSection() {
         <GrPrevious className=' text-orange-500 cursor-pointer  font-bold text-4xl hover:scale-125 hover:text-orange-500 ' />
         <div className=" flex justify-center align-middle w-full gap-4">
 
-          <img src="/assets/images/landigImg.avif" className="object-cover" alt="Image 1" style={{ objectFit: 'cover', height: "380px", width: "50%"}} />
+          <img src="/assets/images/landigImg.avif" className="object-cover" alt="Image 1" style={{ objectFit: 'cover', height: "300px", width: "50%"}} />
           <div className=" flex">
             {/* <p className="  text-white font-extrabold text-xl">Luxury VauVO</p> */}
             {/* <p className='absolute top-10 right-8 text-white font-extrabold text-xl'>$5997</p> */}
@@ -19,7 +19,7 @@ function PopularSection() {
 
 
 
-          <img src="/assets/images/landigImg.avif" className="object-cover" alt="Image 2" style={{ objectFit: 'cover', height: "380px", width: "50%" }} />
+          <img src="/assets/images/landigImg.avif" className="object-cover" alt="Image 2" style={{ objectFit: 'cover', height: "300px", width: "50%" }} />
           <div className=" flex">
             {/* <p className=" text-white font-extrabold text-xl">Luxury VauVO</p> */}
             {/* <p className='absolute top-10 right-8 text-white font-extrabold text-xl'>$5997</p> */}
