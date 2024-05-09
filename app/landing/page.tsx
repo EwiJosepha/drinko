@@ -8,14 +8,15 @@ import Cards from '@/components/organisms/card'
 
 function LandingPage() {
   return (
-    <div>
+    <>
       <Navbar />
+
       <HeroSection />
       {/* <FilterByCategories /> */}
       <PopularSection />
       <Cards />
-      <Footer />
-    </div>
+
+    </>
   )
 }
 

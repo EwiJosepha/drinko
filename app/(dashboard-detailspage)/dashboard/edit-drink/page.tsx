@@ -3,6 +3,7 @@
 import React, { useEffect, useState } from "react";
 import DbLayout from "@/components/db-header";
 import Spinners from "@/components/molecules/spinners";
+import { getOneDrink } from "@/app/service/util";
 
 type Prop = {
   name: string;
@@ -24,6 +25,7 @@ const EditDrinks: React.FC = () => {
   const [disable, setDisable] = useState(false)
   const [loading, setLoading] = useState(false)
 
+  const { data , isError, isLoading} = getOneDrink()
   const [drinkInfo, setDrinkInfo] = useState<Prop>({
     name: "",
     description: "",
@@ -33,23 +35,23 @@ const EditDrinks: React.FC = () => {
     category: "",
   })
 
-  // useEffect(()=>{
-  //   if(data){
-  //     setDrinkInfo({
-  //       ...drinkInfo,
-  //       name: data.name || "",
-  //       description: data.description || "",
-  //       recipe: data.recipe || [],
-  //       ingredients: data.recipe || "",
-  //       glass: data.glass || "",
-  //       category: data.category || ""
-  
-  //     })
-  //   }
-  
-  // },[data])
+  useEffect(()=>{
+    if(data){
+      setDrinkInfo({
+        ...drinkInfo,
+        name: data.name || "",
+        description: data.description || "",
+        recipe: data.recipe || [],
+        ingredients: data.recipe || "",
+        glass: data.glass || "",
+        category: data.category || ""
 
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement| HTMLSelectElement | HTMLTextAreaElement>) => {
+      })
+    }
+
+  },[data])
+
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
     const { value } = e.target;
     setDrinkInfo((prevdrinkInfo) => ({
       ...prevdrinkInfo,
@@ -62,10 +64,10 @@ const EditDrinks: React.FC = () => {
     setErroringredients('')
     setErrorcategory('')
     setErrorglass('')
-    
+
   };
 
-   function save() {
+  function save() {
     if (drinkInfo.name === "") {
       setErrorname('Name is required*')
       return
@@ -88,7 +90,7 @@ const EditDrinks: React.FC = () => {
       setErrorcategory('Room is required*')
       return
     }
-  
+
     setDisable(true)
     setLoading(false)
   }
@@ -120,9 +122,9 @@ const EditDrinks: React.FC = () => {
             Glass*
           </label>
           <select className="border border-gray-200 px-4 py-3 rounded-md w-full"
-          name="glass"
-          value={drinkInfo.glass}
-          onChange={ handleInputChange}>
+            name="glass"
+            value={drinkInfo.glass}
+            onChange={handleInputChange}>
             <option value="">0</option>
             <option value="1">1</option>
             <option value="2">2</option>
@@ -140,9 +142,9 @@ const EditDrinks: React.FC = () => {
             Category*
           </label>
           <select className="border border-gray-200 px-4 py-3 rounded-md w-full"
-          name="category"
-          value={drinkInfo.category}
-           onChange={handleInputChange}>
+            name="category"
+            value={drinkInfo.category}
+            onChange={handleInputChange}>
             <option value="">0</option>
             <option value="1">1</option>
             <option value="2">2</option>

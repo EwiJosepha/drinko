@@ -6,7 +6,7 @@ function Cards() {
   return (
     <div>
       <h1 className=' text-center font-bold text-3xl'>Our Drinks</h1>
-      <div className="relative w-full-screen p-8 grid grid-cols-3 gap-8">
+      <div className="relative w-full-screen grid grid-cols-3 gap-8">
         <div className="bg-brown-500 text-white rounded-lg shadow-lg overflow-hidden transform hover:scale-105 transition duration-300 cursor-pointer">
           <img src="/assets/images/punchpic.jpg" alt="card Img" />
           <div className="p-4">

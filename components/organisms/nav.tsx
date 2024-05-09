@@ -74,7 +74,7 @@ const Navbar: React.FC = () => {
                     {/* Mobile Menu */}
                     <div className="md:hidden lg:hidden">
                         <button
-                            onClick={handleMobileMenuToggle}
+                            // onClick={handleMobileMenuToggle}
                             className="text-white hover:text-gray-400"
                         >
                             {isMobileMenuOpen ? <FaTimes /> : <FaBars />}

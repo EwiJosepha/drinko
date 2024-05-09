@@ -53,10 +53,9 @@ const CreatDrink: React.FC = () => {
       try {
         const formData = new FormData();
         formData.append("file", fileName);
-        formData.append("upload_preset", "real-estate-preset");
-  
+        formData.append("upload_preset", "drinks-preset");
         const uploadResponse = await fetch(
-          "https://api.cloudinary.com/v1_1/beri-cloud/image/upload",
+          "https://api.cloudinary.com/v1_1/dlr18njpf/image/upload",
           {
             method: "POST",
             body: formData,
@@ -128,6 +127,9 @@ const CreatDrink: React.FC = () => {
       }
       return res.json();
     }).then((data) => {
+      if(data.status == 201){
+        return 'created successfully'
+      }
       console.log("data", data);
     }).catch((error) => {
       console.log(error);
@@ -135,6 +137,7 @@ const CreatDrink: React.FC = () => {
 
     setDisable(true);
     console.log(combineObjc);
+    
 
   };
 

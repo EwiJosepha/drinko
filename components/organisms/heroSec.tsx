@@ -16,7 +16,7 @@ const HeroSection: React.FC = () => {
 
       <section className="absolute bottom-1/3 transform -translate-x-1/2 left-1/2">
         <div className="container mx-auto px-4">
-          <h1 className=" bg-neutral-800 font-extrabold md:text-3xl mb-20 sm:text-3xl md:text-center xs:text-center bg-blue p-10 bg-opacity-60 float-right">
+          <h1 className=" bg-neutral-800 font-extrabold md:text-3xl mb-20 sm:text-3xl md:text-center xs:text-center bg-blue p-10 bg-opacity-60 float-right hover:bg-slate-300 rounded-lg">
             Drinking with Ze Drinko gets you sobber and elucidated
           </h1>
         </div>

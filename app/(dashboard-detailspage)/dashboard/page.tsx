@@ -49,9 +49,6 @@ const Dashboard: React.FC = () => {
     }
   })
 
-
-  
-
   function handleClickAction(glassId: number) {
     if (selectedglassId === glassId) {
       setDropDownVisible((prev) => !prev)

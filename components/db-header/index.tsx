@@ -28,7 +28,7 @@ export default function DbLayout ({children, only_header, header}: Props) {
                 </div>
             </div>
 
-            <div className=" w-full md:w-[83%] flex-col md:mt-40 mb-10 rounded-xl flex  md:mx-auto ">{children}</div>
+            <div className="bg-white w-full md:w-[83%] flex-col md:mt-40 mb-10 rounded-xl flex md:mx-auto overflow-y-scroll no-scrollbaro ">{children}</div>
     </>
   )
 

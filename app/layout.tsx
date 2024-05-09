@@ -25,7 +25,7 @@ export default function RootLayout({
           disableTransitionOnChange
         >
 
-          <div className="md:w-[80%] w-full z-10 min-h-screen">
+          <div className=" w-full z-10 min-h-screen">
             <>
               <ReactQueryProvider>
                 {children}

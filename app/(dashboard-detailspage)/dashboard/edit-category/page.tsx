@@ -69,7 +69,10 @@ if (isLoading) {
       })
       .then((data) => {
         if (data.status === 201) {
+          return "created correctly"
         } else if (data.status === 200) {
+          // console.log(data);
+          
           return 
         } else {
           setLoading(true)
