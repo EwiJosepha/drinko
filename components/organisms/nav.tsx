@@ -56,13 +56,13 @@ const Navbar: React.FC = () => {
     //     console.log(res);
     // };a
     return (
-        <nav className="py-5 bg-neutral-800 ">
+        <nav className="py-5 bg-white ">
 
             <input
                 type='search'
                 placeholder='search drinks'
                 // onChange={searchRooms2}
-                className='border border-gray-400 px-6 py-2 float-right placeholder-orange-500 hover:text-gray-400 bg-neutral-600 pr-8' />
+                className='border border-gray-400 px-6 py-2 float-right placeholder-orange-500 hover:text-gray-400 bg-black pr-8' />
 
             <div className="container mx-auto px-4">
                 <div className="flex justify-between items-center h-16 py-5">
@@ -84,12 +84,12 @@ const Navbar: React.FC = () => {
                     {/* Desktop Menu */}
                     <div className="hidden md:flex items-center space-x-20">
                         <div className="relative">
-                            <Link href="/about-me" className="text-white hover:text-gray-400">
+                            <Link href="/about-me" className="text-orange-500 hover:text-gray-400">
                                 About
                             </Link>
                         </div>
                         <div className="relative">
-                            <Link href="/property" className="text-white hover:text-gray-400">
+                            <Link href="/property" className="text-orange-500 hover:text-gray-400">
                                 Drinks
                             </Link>
                         </div>
@@ -97,7 +97,7 @@ const Navbar: React.FC = () => {
                             <div className="relative">
                                 <Link
                                     href="/dashboard"
-                                    className="text-white hover:text-gray-400"
+                                    className="text-orange-500 hover:text-gray-400"
                                 >
                                     Dashboard
                                 </Link>
@@ -105,7 +105,7 @@ const Navbar: React.FC = () => {
                         )}
                         {!isAgentSign && (
                             <div className="relative group">
-                                <button className="text-white hover:text-gray-400">
+                                <button className="text-orange-500 hover:text-gray-400">
                                     Contact Us
                                 </button>
                             </div>
@@ -114,7 +114,7 @@ const Navbar: React.FC = () => {
                         {isAgentSign && (
                             <div className="relative">
                                 <button
-                                    className="flex items-center py-6 text-white hover:text-gray-400"
+                                    className="flex items-center py-6 text-orange-500 hover:text-gray-400"
 
                                 >
                                     <FaLockOpen className="block mr-3 text-xl" />
@@ -125,20 +125,20 @@ const Navbar: React.FC = () => {
 
                         {!isAgentSign && (
                             <Link href="/login">
-                                <span className="relative text-white flex items-center justify-center hover:text-gray-400">
+                                <span className="relative text-orange-500 flex items-center justify-center hover:text-gray-400">
                                     <FaRegUserCircle className="mr-2 text-2xl" />
                                     <button className=" ">Log In</button>
                                 </span>
                             </Link>
                         )}
                     </div>
-                    <span className="relative text-white flex items-center justify-center hover:text-gray-400">
+                    <span className="relative text-orange-500 flex items-center justify-center hover:text-gray-400">
                         {/* <p><ModeToggle /></p> */}
                         </span>
                 </div>
             </div>
             {isMobileMenuOpen && (
-                <div className="fixed inset-0 z-50 bg-blue text-white w-[90%] h-fit p-6">
+                <div className="fixed inset-0 z-50 bg-blue text-orange-500 w-[90%] h-fit p-6">
 
                 </div>
             )}

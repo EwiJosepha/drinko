@@ -5,37 +5,28 @@ import { GrNext, GrPrevious } from 'react-icons/gr';
 
 function PopularSection() {
   return (
-    <div className='bg-neutral-800'>
-      <h1 className=' text-center text-4xl font-bold'>Popular Drinks</h1>
+    <div className='bg-white h-96 pl-10 pr-10'>
+      <h1 className=' text-center text-4xl font-bold pb-10'>Popular Drinks</h1>
       <div className="flex items-center">
-        <GrPrevious className=' text-white cursor-pointer  font-bold text-4xl hover:scale-125 hover:text-orange-500' />
-        <div className=" grid grid-cols-2 relative ">
+        <GrPrevious className=' text-orange-500 cursor-pointer  font-bold text-4xl hover:scale-125 hover:text-orange-500 ' />
+        <div className=" flex justify-center align-middle w-full gap-4">
 
-          {/* <div>
-
-          <img src="/assets/images/landigImg.avif" style={{ objectFit: 'cover', height:"85.3%" }} alt='best' />
+          <img src="/assets/images/landigImg.avif" className="object-cover" alt="Image 1" style={{ objectFit: 'cover', height: "380px", width: "50%"}} />
           <div className=" flex">
-            <p className=" absolute top-10 left-8 text-white font-extrabold text-xl">Luxury VauVO</p>
-            <p className='absolute top-10 right-8 text-white font-extrabold text-xl'>$5997</p>
-          </div>
-          </div> */}
-          <div className="">
-            <img src="/assets/images/landigImg.avif" className="object-cover" alt="Image 1" style={{ objectFit: 'cover', height: "85.3%" }} />
-            <div className=" flex">
-              <p className=" top-10 left-8 text-white font-extrabold text-xl">Luxury VauVO</p>
-              {/* <p className='absolute top-10 right-8 text-white font-extrabold text-xl'>$5997</p> */}
-            </div>
+            {/* <p className="  text-white font-extrabold text-xl">Luxury VauVO</p> */}
+            {/* <p className='absolute top-10 right-8 text-white font-extrabold text-xl'>$5997</p> */}
           </div>
 
-          <div className="">
-            <img src="/assets/images/landigImg.avif" className="object-cover" alt="Image 2" style={{ objectFit: 'cover', height: "85.3%" }} />
-            <div className=" flex">
-              <p className=" top-10 left-8 text-white font-extrabold text-xl">Luxury VauVO</p>
-              {/* <p className='absolute top-10 right-8 text-white font-extrabold text-xl'>$5997</p> */}
-            </div>
+
+
+          <img src="/assets/images/landigImg.avif" className="object-cover" alt="Image 2" style={{ objectFit: 'cover', height: "380px", width: "50%" }} />
+          <div className=" flex">
+            {/* <p className=" text-white font-extrabold text-xl">Luxury VauVO</p> */}
+            {/* <p className='absolute top-10 right-8 text-white font-extrabold text-xl'>$5997</p> */}
+
           </div>
         </div>
-        <GrNext className=' text-white cursor-pointer  font-bold text-4xl hover:scale-125 hover:text-orange-500' />
+        <GrNext className=' text-orange-500 cursor-pointer  font-bold text-4xl hover:scale-125 hover:text-orange-500' />
       </div>
 
     </div>
