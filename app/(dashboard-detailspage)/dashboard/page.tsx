@@ -77,12 +77,12 @@ const Dashboard: React.FC = () => {
     <>
       <DbLayout header="Dashboard" only_header>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 " style={{ gridAutoRows: "500px" }}>
-          <div className="bg-neutral-800 shadow-lg rounded-lg p-4">
-            <h2 className="text-xl font-bold mb-4">Your Drinks, Categories && Glasses</h2>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 " style={{ gridAutoRows: "580px" }}>
+          <div className="bg-neutral-900 shadow-lg rounded-lg p-4">
+            <h2 className="text-white xl font-bold mb-4">Your Drinks, Categories && Glasses</h2>
             {/* Content for the drinks section */}
             <div className="ddrinks flex justify-between px-5 shadow-lg bg-neutral-800 rounded-lg p-5  overflow-hidden transform hover:scale-105 transition duration-300">
-              <h1 className=' text-1xl hover:text-orange-500 cursor-pointer'>Lemonade</h1>
+              <h1 className=' text-white 1xl hover:text-orange-500 cursor-pointer'>Lemonade</h1>
               <img src='/assets/images/bg.avif' alt="lemonade" className=' w-10 h-10 rounded-full cursor-default' />
               <div className="flex items-center">
                 <button
@@ -101,12 +101,12 @@ const Dashboard: React.FC = () => {
 
           </div>
 
-            <div className="bg-neutral-800 shadow-lg rounded-lg p-4">
-              <h2 className="text-xl font-bold mb-4">Glasses</h2>
+            <div className="bg-neutral-900 shadow-lg rounded-lg p-4">
+              <h2 className="text-white xl font-bold mb-4">Glasses</h2>
               {/* Content for the ingredients section */}
           {data?.data.map((glass: any) => (
               <div className="drinks flex justify-between  gap-5 px-5 shadow-lg bg-neutral-800 rounded-lg p-5  overflow-hidden transform hover:scale-105 transition duration-300 border-b-2 border-gray-400">
-                <h1 className=' text-1xl hover:text-orange-500 cursor-pointer'>{glass.name}</h1>
+                <h1 className=' text-white 1xl hover:text-orange-500 cursor-pointer'>{glass.name}</h1>
               
                 <div className="flex items-center">
                   <button
@@ -127,12 +127,12 @@ const Dashboard: React.FC = () => {
           ))}
             </div>
 
-          <div className="bg-neutral-800 shadow-xl rounded-lg p-4 mb-4 ">
-            <h2 className="text-xl font-bold mb-4">Categories</h2>
+          <div className="bg-neutral-900 shadow-xl rounded-lg p-4 mb-4 ">
+            <h2 className="text-white xl font-bold mb-4">Categories</h2>
             {/* Content for the categories section */}
             {categoryData?.data.map((category:any)=>(
-              <div className="drinks flex justify-between px-5 shadow-lg bg-neutral-800 rounded-lg p-5  overflow-hidden transform hover:scale-105 transition duration-300 border-b-2 border-gray-400">
-              <h1 className=' text-1xl hover:text-orange-500 cursor-pointer'>{category.name}</h1>
+              <div className="drinks flex justify-between px-5 shadow-lg bg-neutral-800 rounded-lg p-5  overflow-hidden transform hover:scale-105 transition duration-300 border-b-2 border-gray-400 pb-3px">
+              <h1 className=' text-white 1xl hover:text-orange-500 cursor-pointer'>{category.name}</h1>
               <div className="flex items-center">
                 <button
                   className="text-gray-500 focus:outline-none"
