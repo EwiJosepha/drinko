@@ -15,6 +15,7 @@ function LandingPage() {
       {/* <FilterByCategories /> */}
       <PopularSection />
       <Cards />
+      <Footer />
 
     </>
   )

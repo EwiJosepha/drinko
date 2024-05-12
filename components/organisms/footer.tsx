@@ -4,7 +4,7 @@ import Logo from './logo'
 function Footer() {
   return (
     <>
-      <footer className="bg-neutral-800 py-4">
+      <footer className="bg-neutral-900 py-4">
         <div className="container mx-auto">
           <div className="grid grid-cols-4 gap-8">
             <a href="#" className="text-white">
