@@ -10,7 +10,7 @@ function Footer() {
             <a href="#" className="text-white">
               <svg className="w-6 h-6 fill-current" viewBox="0 0 24 24">
               </svg>
-              {/* Twitter icon SVG */}
+              
               <div className="">
 
                 <Logo />
@@ -23,7 +23,7 @@ function Footer() {
             </a>
             <a href="#" className="text-white">
               <svg className="w-6 h-6 fill-current" viewBox="0 0 24 24">
-                {/* GitHub icon SVG */}
+               
               </svg>
               <p className=' text-white hover:text-red-400 '>drinks</p>
               <p className=' text-white hover:text-red-400'>recipe</p>
@@ -35,7 +35,7 @@ function Footer() {
             <a href="#" className="text-white">
               <svg className="w-6 h-6 fill-current" viewBox="0 0 24 24">
               </svg>
-              {/* Instagram icon SVG */}
+            
               <p className=' text-white hover:text-red-400'>About Us</p>
               <p className=' text-white hover:text-red-400'>Terms of service</p>
               <p className=' text-white hover:text-red-400'>Guidelines</p>
@@ -46,7 +46,7 @@ function Footer() {
             <a href="#" className="text-white">
               <svg className="w-6 h-6 fill-current" viewBox="0 0 24 24">
               </svg>
-              {/* Instagram icon SVG */}
+              
               <p className=' text-white hover:text-red-400'>Advertisement</p>
               <p className=' text-white hover:text-red-400'>Privacy</p>
               <p className=' text-white hover:text-red-400'>Career</p>
