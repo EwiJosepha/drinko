@@ -27,7 +27,7 @@ const DbLayout: React.FC<Props> = ({ children }) => {
       >
         <div className="h-full px-10 py-4 overflow-y-auto bg-gray-50 dark:bg-neutral-800">
           <ul className="space-y-2 font-medium">
-            <li className=" pb-10 pt-10 border-b-2 border-gray-500">
+            <li className=" pb-10 pt-10 border-b-2 border-gray-500 flex align-middle justify-center">
 
               {/* <span>< FaPerbyte/></span> */}
               <svg
@@ -39,11 +39,11 @@ const DbLayout: React.FC<Props> = ({ children }) => {
               >
                 <path d="M6.143 0H1.857A1.857 1.857 0 0 0 0 1.857v4.286C0 7.169.831 8 1.857 8h4.286A1.857 1.857 0 0 0 8 6.143V1.857A1.857 1.857 0 0 0 6.143 0Zm10 0h-4.286A1.857 1.857 0 0 0 10 1.857v4.286C10 7.169 10.831 8 11.857 8h4.286A1.857 1.857 0 0 0 18 6.143V1.857A1.857 1.857 0 0 0 16.143 0Zm-10 10H1.857A1.857 1.857 0 0 0 0 11.857v4.286C0 17.169.831 18 1.857 18h4.286A1.857 1.857 0 0 0 8 16.143v-4.286A1.857 1.857 0 0 0 6.143 10Zm10 0h-4.286A1.857 1.857 0 0 0 10 11.857v4.286c0 1.026.831 1.857 1.857 1.857h4.286A1.857 1.857 0 0 0 18 16.143v-4.286A1.857 1.857 0 0 0 16.143 10Z" />
               </svg>
-              <span className="text-4xl text-green pl-3">Dashboar</span>
+              <span className="text-2xl text-green pl-3">Dashboard</span>
 
             </li>
             {/* <hr /> */}
-            <li className=" pb-10 pt-10 border-b-2 border-gray-500">
+            <li className=" pb-10 pt-10 border-b-2 border-gray-500 flex align-middle justify-center">
               <Link href="/dashboard/profile"
 
                 className="flex items-center p-2 text-gray-900 rounded-lg dark:text-orange-500 hover:bg-gray-100 dark:hover:bg-gray-700 group"
@@ -56,7 +56,7 @@ const DbLayout: React.FC<Props> = ({ children }) => {
               </Link>
             </li>
 
-            <li className="pb-10 pt-10 border-b-2 border-gray-500">
+            <li className="pb-10 pt-10 border-b-2 border-gray-500 flex align-middle justify-center">
 
               <FaRegEye />
               <span
@@ -70,7 +70,7 @@ const DbLayout: React.FC<Props> = ({ children }) => {
 
             <p className="text-2xl text-green pt-10 pb-2 dark:text-orange-500">CRUD DRINKS</p>
 
-            <li>
+            <li className="pb-5 border-b-2 flex align-middle justify-center">
 
               <FaPlus />
               <button
@@ -81,7 +81,7 @@ const DbLayout: React.FC<Props> = ({ children }) => {
               </button>
 
             </li>
-            <li>
+            <li className=" pb-5 border-b-2 flex align-middle justify-center">
 
               <FaPlus />
               <button
@@ -92,7 +92,7 @@ const DbLayout: React.FC<Props> = ({ children }) => {
               </button>
 
             </li>
-            <li className=" pb-5 border-b-2 border-gray-500">
+            <li className=" pb-5 border-b-2 border-gray-500 flex align-middle justify-center">
 
               <FaPlus />
               <button
