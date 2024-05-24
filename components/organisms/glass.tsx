@@ -25,14 +25,18 @@ const GlassCard: React.FC = () => {
 
     setErrorn("")
     setErrort("")
+    console.log(glassInfo);
   }
+
   function createGlass() {
-    fetch(base_url + "post/create/glasses", {
+    fetch(base_url + "post/create/glasses/", {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
       },
       body: JSON.stringify(glassInfo)
+     
+      
     }).then((res) => {
       if (!res.ok) {
         console.log("didn't get created");
@@ -53,12 +57,16 @@ const GlassCard: React.FC = () => {
         <h1 className="text-2xl font-bold mb-4">Glass Card</h1>
         <input
           type="text"
+          name="name"
+          value={glassInfo.name}
           placeholder="Enter glass name"
           className="w-full bg-gray-200 border border-gray-300 rounded mb-4 p-2"
           onChange={handleInputChange}
         />
         <textarea
           placeholder="Enter glass type"
+          name="type"
+          value={glassInfo.type}
           className="w-full bg-gray-200 border border-gray-300 rounded mb-4 p-2"
           rows={4}
           onChange={handleInputChange}
