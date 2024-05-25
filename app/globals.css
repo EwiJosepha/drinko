@@ -1,6 +1,6 @@
 @tailwind base;
-  @tailwind components;
-  @tailwind utilities;
+@tailwind components;
+@tailwind utilities;
 
   @layer base {
     :root {
@@ -66,11 +66,47 @@
     }
   }
 
-  @layer base {
-    * {
-      @apply border-border;
+  @keyframes pass {
+    0% {
+      opacity: 1;
     }
-    body {
-      @apply bg-background text-foreground;
+  
+    50% {
+      opacity: 0;
+    }
+  
+    100% {
+      opacity: 1;
     }
   }
+  
+  @keyframes pass1 {
+    0% {
+      opacity: 1;
+    }
+  
+    50% {
+      opacity: 0;
+    }
+  
+    100% {
+      opacity: 1;
+    }
+  }
+  
+  .animate-pass {
+    color: black;
+    opacity: 0;
+    animation: pass 2s ease-in-out infinite;
+    letter-spacing: 0.5em;
+    text-shadow: 2px 2px 3px #919191;
+  }
+  
+  .animate-pass1 {
+    color: black;
+    opacity: 0;
+    animation: pass1 2s ease-in-out infinite;
+    letter-spacing: 0.5em;
+    text-shadow: 2px 2px 3px #919191;
+  }
+
