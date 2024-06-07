@@ -10,9 +10,7 @@ function LandingPage() {
   return (
     <>
       <Navbar />
-
       <HeroSection />
-      {/* <FilterByCategories /> */}
       <PopularSection />
       <Cards />
       <Footer />
