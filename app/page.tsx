@@ -6,7 +6,7 @@ export default function Home() {
     <main>
       <LandingPage />
     </main>
-    {/* <section className="p-24">
+    <section className="p-24">
       <h1 className=" text-2xl font-bold">SHADCN is awesome </h1>
       <p className="text-2xl text-muted-foreground">handy code for themes easy to implement in our code</p>
     </section>
@@ -14,7 +14,7 @@ export default function Home() {
       <Button>LEARN MORE</Button>
       <Button>LEARN MORE</Button>
 
-    </div> */}
+    </div>
   </>
   );
 }
