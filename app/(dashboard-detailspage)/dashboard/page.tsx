@@ -1,15 +1,13 @@
 "use client"
-import DbLayout from '@/components/db-header'
 import React from 'react'
-import df from "@/public/assets/images/bg.avif"
 import { FiMoreVertical } from 'react-icons/fi'
-import DropDownDrinks from '@/components/organisms/drop-down'
 import GlassDropDown from '@/components/organisms/glass-dropdown'
 import CategoryDropDown from '@/components/organisms/category-dropdown'
 import { useQuery } from '@tanstack/react-query';
 import axios from 'axios';
 import { base_url } from '@/app/service/util'
-import { useState } from 'react'
+import Navbar from '@/components/organisms/nav'
+
 
 type Glass = {
   id: number
@@ -75,9 +73,7 @@ const Dashboard: React.FC = () => {
   return (
 
     <>
-      <DbLayout header="Dashboard" only_header>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 float-left " style={{ gridAutoRows: "580px" }}>
+        <div className="grid grid-cols-3 md:grid-cols-3 gap-4 float-left" style={{ gridAutoRows: "580px" }}>
           <div className="bg-neutral-900 shadow-lg rounded-lg p-4">
             <h2 className="text-white xl font-bold mb-4">Your Drinks, Categories && Glasses</h2>
             <div className="ddrinks flex justify-between px-5 shadow-lg bg-neutral-800 rounded-lg p-5  overflow-hidden transform hover:scale-105 transition duration-300">
@@ -149,8 +145,6 @@ const Dashboard: React.FC = () => {
 
           </div>
         </div>
-
-      </DbLayout>
 
     </>
 

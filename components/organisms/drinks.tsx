@@ -7,7 +7,6 @@ import { base_url } from "@/app/service/util";
 type Prop = {
   name: string;
   description: string;
-  // imageUrl: string;
   ingredients: string;
   recipe: string[];
   category: string;
@@ -28,7 +27,6 @@ const CreatDrink: React.FC = () => {
   const [drink, setDrink] = useState<Prop>({
     name: "",
     description: "",
-    // imageUrl: "",
     recipe: [],
     ingredients: "",
     glass: "",
@@ -61,19 +59,16 @@ const CreatDrink: React.FC = () => {
             body: formData,
           }
         );
-  
+
         if (!uploadResponse.ok) {
           throw new Error("Failed to upload image");
         }
-  
+
         const uploadedImageData = await uploadResponse.json();
         const imageUrl = uploadedImageData.secure_url;
-        
-        // Use the imageUrl as needed (e.g., setImg(imageUrl), store in localStorage, etc.)
         setImg(imageUrl)
       } catch (error) {
         console.error("Error uploading image:", error);
-        // Handle the error, e.g., display an error message to the user
       }
     }
   }
@@ -83,7 +78,7 @@ const CreatDrink: React.FC = () => {
 
     const combineObjc = {
       ...drink,
-      imageUrl:img
+      imageUrl: img
     }
     if (drink.name === "") {
       setErrorname("Name is required*");
@@ -109,10 +104,6 @@ const CreatDrink: React.FC = () => {
       setErrorcategory("Category is required*");
       return;
     }
-    // if (drink.imageUrl === "") {
-    //   setErrorm("image Url is required*");
-    //   return;
-    // }
 
     fetch(base_url + "post/create/drinks", {
       method: 'POST',
@@ -127,7 +118,7 @@ const CreatDrink: React.FC = () => {
       }
       return res.json();
     }).then((data) => {
-      if(data.status == 201){
+      if (data.status == 201) {
         return 'created successfully'
       }
       console.log("data", data);
@@ -137,12 +128,12 @@ const CreatDrink: React.FC = () => {
 
     setDisable(true);
     console.log(combineObjc);
-    
+
 
   };
 
-  
-  
+
+
 
 
   return (

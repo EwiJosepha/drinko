@@ -12,8 +12,8 @@ const GlassCard: React.FC = () => {
   const [disabled, setDisable] = useState(false)
 
   const [glassInfo, setglassInfo] = useState({
-    name: "",
-    type: ""
+    title: "",
+    description: ""
   })
 
 
@@ -57,16 +57,16 @@ const GlassCard: React.FC = () => {
         <h1 className="text-2xl font-bold mb-4">Glass Card</h1>
         <input
           type="text"
-          name="name"
-          value={glassInfo.name}
+          name="title"
+          value={glassInfo.title}
           placeholder="Enter glass name"
           className="w-full bg-gray-200 border border-gray-300 rounded mb-4 p-2"
           onChange={handleInputChange}
         />
         <textarea
           placeholder="Enter glass type"
-          name="type"
-          value={glassInfo.type}
+          name="description"
+          value={glassInfo.description}
           className="w-full bg-gray-200 border border-gray-300 rounded mb-4 p-2"
           rows={4}
           onChange={handleInputChange}
